@@ -57,21 +57,21 @@
           <span class="close"></span>
           <div class="modal-body">
             <form
-              class="form"
+              id="form"
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              onsubmit="return validate(e);"
             >
               <div
                 class="formData">
                 <label for="firstName">Prénom</label><br>
                 <input
+                  required
                   id="firstName"
                   class="text-control"
                   type="text"
                   name="first"
-                  minlength="2"
                 /><br>
               </div>
               <div id="errorFirstName"></div>
@@ -79,6 +79,7 @@
                 class="formData">
                 <label for="lastName">Nom</label><br>
                 <input
+                  required
                   id="lastName"
                   class="text-control"
                   type="text"
@@ -90,6 +91,7 @@
                 class="formData">
                 <label for="email">E-mail</label><br>
                 <input
+                  required
                   id="email"
                   class="text-control"
                   type="email"
@@ -101,6 +103,7 @@
                 class="formData">
                 <label for="birth">Date de naissance</label><br>
                 <input
+                  required
                   id="birth"
                   class="text-control"
                   type="date"
@@ -111,7 +114,7 @@
               <div
                 class="formData">
                 <label for="howMuchTournament">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input id="howMuchTournament" type="number" class="text-control" name="quantity" min="0" max="99">
+                <input id="howMuchTournament" type="number" class="text-control" name="quantity" min="0" max="99" required>
               </div>
               <div id="errorTournament"></div>
               <p class="text-label">Quelles villes ?</p>
@@ -215,6 +218,11 @@
               />
             </form>
           </div>
+          <div id="confirmation" class="modal-body">
+            Merci ! <br />
+            Votre réservation a été prise en compte. Vous serez contacté très rapidement par notre équipe. 
+          </div>
+          <input id="confirmationBtn" class="btn" type="button">
         </div>
       </div>
     </main>

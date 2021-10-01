@@ -226,6 +226,15 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
+#errorFirstName, #errorLastName, #errorEmail, #errorBirth, #errorTournament, #errorLoca, #errorCheckbox{
+  color:red;
+  font-size: 13px;
+  margin: 10px 0;
+}
+#confirmation{
+  display: flex;
+  align-items: center;
+}
 /* 
 input[data-error]::after {
     content: attr(data-error);
