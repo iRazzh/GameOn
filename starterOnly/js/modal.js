@@ -1,17 +1,8 @@
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-const closeForm = document.getElementsByClassName("close"); // Get class of closeBtn
+const closeForm = document.getElementsByClassName("close")[0]; // Get class of closeBtn
 const confirmation = document.getElementById("confirmation");
 const confirmationBtn = document.getElementById("confirmationBtn");
 
@@ -26,7 +17,7 @@ function launchModal() {
 function closeModal() {
   modalbg.style.display = "none";
 } 
-closeForm[0].addEventListener("click", closeModal);
+closeForm.addEventListener("click", closeModal);
 
 confirmation.style.display = 'none';
 confirmationBtn.style.display = 'none';
