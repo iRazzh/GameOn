@@ -2,10 +2,7 @@
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const form = document.getElementById("form");
-const formData = document.querySelectorAll(".formData");
 const closeForm = document.getElementsByClassName("close")[0];
-const confirmation = document.getElementById("confirmation");
-const confirmationBtn = document.getElementById("confirmationBtn");
 const containerConfirmation = document.getElementsByClassName("containerConfirmation")[0];
 const closeConfirmationForm = document.getElementsByClassName("close-btn")[0]; // Get class of closeBtn
 
@@ -51,7 +48,6 @@ function verifFirstName() {
     return (validFirstName = true);
   }
 }
-
 // Vérif = lastName
 function verifLastName() {
   const lastName = document.getElementById('lastName');
@@ -64,7 +60,6 @@ function verifLastName() {
     return (validLastName = true);
   }
 }
-
 // Vérif = email
 function verifEmail() {
   const email = document.getElementById('email');
@@ -77,7 +72,6 @@ function verifEmail() {
     return (validEmail = true);
   }
 }
-
 // Vérif = birthDate
 function verifBirthDate() {
   const birth = document.getElementById('birth');
@@ -90,7 +84,6 @@ function verifBirthDate() {
     return (validBirthDate = true);
   }
 }
-
 // Vérif = tournament
 function verifTournament() {
   const howMuchTournament = document.getElementById('howMuchTournament')
@@ -103,7 +96,6 @@ function verifTournament() {
     return (validTournament = true);
   }
 }
-
 // Vérif = localisation
 function verifLoca() {
   const location1 = document.getElementById('location1');
@@ -121,7 +113,6 @@ function verifLoca() {
     return (validLoca = true);
   }
 }
-
 // Vérif = checkBox
 function verifCheck() {
   const checkValidation = document.getElementById('checkbox1');
@@ -136,7 +127,6 @@ function verifCheck() {
 }
 
 // Display none confirmation form 
-
 containerConfirmation.style.display = 'none';
 
 // Function form valid with display none 
@@ -150,8 +140,6 @@ function formValid(e) {
   verifTournament();
   verifLoca();
   verifCheck();
-  
-
   if (validFirstName === true && validLastName === true && validEmail === true && validBirthDate === true && validTournament === true && validLoca === true && validCheckBox === true) {
     form.style.display = 'none'
     containerConfirmation.style.display = 'block'
