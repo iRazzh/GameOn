@@ -409,6 +409,16 @@ input[data-error]::after {
   background-color: rgba(0, 0, 0, 0.1);
 }
 /* custom select end */
+.containerConfirmation{
+  padding: 3rem;
+  text-align: center;
+}
+#confirmation{
+  margin: 10rem 0;
+}
+.confirmationThanks{
+  margin-bottom: 2rem;
+}
 .text-label {
   font-weight: normal;
   font-size: 16px;

@@ -1,11 +1,13 @@
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
+const form = document.getElementById("form");
 const formData = document.querySelectorAll(".formData");
-const closeForm = document.getElementsByClassName("close")[0]; // Get class of closeBtn
+const closeForm = document.getElementsByClassName("close")[0];
 const confirmation = document.getElementById("confirmation");
 const confirmationBtn = document.getElementById("confirmationBtn");
-const form = document.getElementById("form");
+const containerConfirmation = document.getElementsByClassName("containerConfirmation")[0];
+const closeConfirmationForm = document.getElementsByClassName("close-btn")[0]; // Get class of closeBtn
 
 // Launch Modal Event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -17,8 +19,10 @@ function launchModal() {
 // Close Modal Form 
 function closeModal() {
   modalbg.style.display = "none";
+  containerConfirmation.style.display = "none";
 } 
 closeForm.addEventListener("click", closeModal);
+closeConfirmationForm.addEventListener("click", closeModal);
 
 // Verif valid form 
 let validFirstName = false;
@@ -73,7 +77,7 @@ function verifEmail() {
     return (validEmail = true);
   }
 }
-  
+
 // Vérif = birthDate
 function verifBirthDate() {
   const birth = document.getElementById('birth');
@@ -132,11 +136,13 @@ function verifCheck() {
 }
 
 // Display none confirmation form 
-confirmation.style.display = 'none';
+
+containerConfirmation.style.display = 'none';
 
 // Function form valid with display none 
 function formValid(e) {
   e.preventDefault();
+
   verifFirstName();
   verifLastName();
   verifEmail();
@@ -148,7 +154,7 @@ function formValid(e) {
 
   if (validFirstName === true && validLastName === true && validEmail === true && validBirthDate === true && validTournament === true && validLoca === true && validCheckBox === true) {
     form.style.display = 'none'
-    confirmation.style.display = 'block'
+    containerConfirmation.style.display = 'block'
   }
 }
 
